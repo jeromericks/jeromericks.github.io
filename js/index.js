@@ -103,8 +103,6 @@ $(document).ready(function() {
 	function endGame() {
 		clearDifficulty();
 		$(".btn-default:first-child").addClass("active");
-		timer = 30;
-		score = 0;
 	}
 
 	function clearDifficulty() {
