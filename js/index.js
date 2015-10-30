@@ -149,6 +149,8 @@ $(document).ready(function() {
 					top: '95px'
 				}, duration)
 			}, duration + 750)
+
+			timer = 5;
 		}
 	});
 
