@@ -165,15 +165,15 @@ $(document).ready(function() {
 					top: '95px'
 				}, duration)
 			}, duration + 750)
-			$('.btn-group').append('<button type="button" class="btn btn-default" id="reset">Reset to Mole Mode</button>')
-			$('#reset').click(function() {
-				reset = true;
-			});
-			if(reset == true) {
-				var replaced = $("body").html().replace('Reset to Nuke Mode','Reset to Mole Mode');
-				$("button").html(replaced);
-				startGame();
-			}
+			// $('.btn-group').append('<button type="button" class="btn btn-default" id="reset">Reset to Mole Mode</button>')
+			// $('#reset').click(function() {
+			// 	reset = true;
+			// });
+			// if(reset == true) {
+			// 	var replaced = $("body").html().replace('Reset to Nuke Mode','Reset to Mole Mode');
+			// 	$("button").html(replaced);
+			// 	startGame();
+			// }
 			// $(".hole-container").css("background", "url(/img/explosion.png)no-repeat center").css("z-index", 5);
 			// $(".tile").css("z-index", -1);
 		}
