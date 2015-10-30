@@ -150,8 +150,6 @@ $(document).ready(function() {
 				}, duration)
 			}, duration + 750)
 
-			timer = 5;
-			intervalMole();
 		}
 	});
 
