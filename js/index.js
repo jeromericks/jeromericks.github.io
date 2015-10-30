@@ -151,6 +151,7 @@ $(document).ready(function() {
 			}, duration + 750)
 
 			timer = 5;
+			intervalMole();
 		}
 	});
 
