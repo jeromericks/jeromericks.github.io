@@ -13,7 +13,6 @@ $(document).ready(function() {
 	var audio = new Audio('/sound/head.mp3');
 	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
 	var user = [];
-	var reset = false;
 
 	function startGame() {
 		if (!$(".btn-default").hasClass("active")) {
@@ -89,15 +88,7 @@ $(document).ready(function() {
 		    	duration = 500;	
 		    	break;
 			}
-			// var x = "extreme";
-			// if(x) {
-			// 	switch (value) {
-			// 		case "extreme":
-			// 	    	duration = 150;	
-			// 	    	break;
-			// 		}
-			// 	}
-			// }
+
 	}
 
 	function onRound() {
@@ -136,11 +127,6 @@ $(document).ready(function() {
 	    selectLevel();
 	});
 
-	
-
-	// $('#nuke').click(function() {
-	// 	$(".tile").css("background-image", "url(/img/explosion.png");
-	// });
 
 	// $('#pause').click(function() {
 	//     pauseGame();
@@ -159,23 +145,12 @@ $(document).ready(function() {
 			$("img").animate({
 				top: '-90px'
 			}, duration)
-			// console.log("top");
+		
 			setTimeout(function() {
 				$("img").animate({
 					top: '95px'
 				}, duration)
 			}, duration + 750)
-			// $('.btn-group').append('<button type="button" class="btn btn-default" id="reset">Reset to Mole Mode</button>')
-			// $('#reset').click(function() {
-			// 	reset = true;
-			// });
-			// if(reset == true) {
-			// 	var replaced = $("body").html().replace('Reset to Nuke Mode','Reset to Mole Mode');
-			// 	$("button").html(replaced);
-			// 	startGame();
-			// }
-			// $(".hole-container").css("background", "url(/img/explosion.png)no-repeat center").css("z-index", 5);
-			// $(".tile").css("z-index", -1);
 		}
 	});
 
