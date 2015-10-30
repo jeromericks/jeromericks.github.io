@@ -178,8 +178,6 @@ $(document).ready(function() {
 			// $(".tile").css("z-index", -1);
 		}
 	});
-	startGame();
-	endGame();
 
 
 
