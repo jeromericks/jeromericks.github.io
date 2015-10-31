@@ -41,7 +41,6 @@ $(document).ready(function() {
 				top: '100px'
 			}, duration)
 		}, duration + 750)
-
 	}
 
 	$(".gameboard").on("click", "img", function() {
