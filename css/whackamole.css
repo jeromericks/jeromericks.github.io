@@ -1,0 +1,123 @@
+body {
+	text-align: center;
+	margin: auto;
+	background: url(/img/background.png) no-repeat center center fixed; 
+  	-webkit-background-size: cover;
+  	-moz-background-size: cover;
+  	-o-background-size: cover;
+  	background-size: cover;
+  	overflow: hidden;
+}
+
+.hole-container {
+	height: 200px;
+	width: 20%;
+	display: block;
+	border-radius: 50%;
+	margin: 5%;
+	overflow: hidden;
+	background-repeat: no-repeat;
+}
+
+.hole-container:first-child {
+	position: relative;
+	top: 35px;
+	right: 110px;
+	width: 18%;
+}
+
+.hole-container:nth-child(2) {
+	position: relative;
+	top: -205px;
+	left: 165px;
+}
+
+.hole-container:nth-child(3) {
+	position: relative;
+	top: -250px;
+	right: 50px;
+}
+
+.hole-container:nth-child(4) {
+	position: relative;
+	top: -520px;
+	left: 200px;
+}
+
+.hole-container:nth-child(5) {
+	position: relative;
+	top: -792px;
+	left: 450px;
+}
+
+.hole-container:nth-child(6) {
+	position: relative;
+	top: -1100px;
+	left: 700px;
+}
+
+.hole-container:nth-child(7) {
+	position: relative;
+	top: -1456px;
+	left: 900px;
+}
+
+.hole-container:nth-child(8) {
+	position: relative;
+	top: -1950px;
+	left: 1100px;
+	width: 18%;
+}
+
+.hole-container:nth-child(9) {
+	position: relative;
+	top: -2316px;
+	left: 550px;
+	width: 18%;
+}
+
+.tile {
+	position: relative;
+	top: 111px;
+	left: 27px;
+	width: 70%;
+	height: 75px;
+	background-color: black;
+	border-radius: 50%;
+	margin: 5%;
+	border: none;
+}
+
+.hole-container img {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	top: 100px;
+}
+
+.hole-container img:first-child {
+	width: 50px;
+	height: 50px;
+	position: relative;
+	top: 100px;
+}
+
+#start, #pause {
+	font-size: 30px;
+	outline: none;
+}
+
+#buttons {
+	position: absolute;
+	top: 10px;
+	right: 250px;
+}
+
+.btn-group {
+	display: block;
+	margin-top: 10px;
+}
+
+.active {
+	background-color: #CCC;
+}

@@ -1,157 +1,102 @@
 $(document).ready(function() {
 	"use strict";
 
-	$("html,body").css('cursor', "url(http://icons.iconarchive.com/icons/sirea/sharp-kitchen/128/Knife-icon.png), auto");
-
-	var moles;
-	var userGuess;
-	var score;
-	var highScore = 0;
-	var duration = 500;
-	var timer;
-	var timerInterval;
-	var audio = new Audio('/sound/head.mp3');
-	var konami = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65, 13];
-	var user = [];
-
-	function startGame() {
-		if (!$(".btn-default").hasClass("active")) {
-			$(".btn-default:first-child").addClass("active");
-		}
-		$("img").attr("src","/img/whackamole.png");
-	    intervalMole();
-	    timer = 30;
-		score = 0;
-	}
-
-	function randomMole() {
-		moles = (Math.floor(Math.random() * 9) + 1);
-		// console.log(moles);
-		return moles;
-	}
-
-	function animateMole(random_hole) {
-		$("[data-tile='" + random_hole + "'] img").animate({
-			top: '-80px'
-		}, duration)
-		// console.log("top");
-
-		setTimeout(function() {
-			$("[data-tile='" + random_hole + "'] img").animate({
-				top: '100px'
-			}, duration)
-		}, duration + 750)
-	}
-
-	$(".gameboard").on("click", "img", function() {
-		$("html,body").css('cursor', "url(http://wcdn2.dataknet.com/static/resources/icons/set57/6ff26b3b.png), auto");
-		score += 1;
-		$(this).hide("explode", {pieces: 100}, 100).show("explode", {pieces: 100}, 100);
-		audio.play();
-		setTimeout(function () {
-			$("html,body").css('cursor', "url(http://icons.iconarchive.com/icons/sirea/sharp-kitchen/128/Knife-icon.png), auto");
-		}, 100);
-	});
-
-	function intervalMole() {
-		timerInterval = setInterval(function() {
-			timer--;
-			// console.log("Timer: " + timer);
-			onRound();
-			if(timer == 0) {
-				clearInterval(timerInterval);
-				var x = confirm("Play again?");
-				if(x) {
-					startGame();
-				} else {
-					endGame();
-				}
-
-			}
-			animateMole(randomMole());
-
-		}, 1000);
-	}
-
-	function selectLevel() {
-		var value = $('.active').val();
-		// console.log(value);
-		switch (value) {
-		    case "easy":
-		    	duration = 1000;
-		    	break;
-		    case "medium":
-		    	duration = 750;
-		    	break;
-		    case "hard":
-		    	duration = 500;	
-		    	break;
-			}
-
-	}
-
-	function onRound() {
-		$("#timer").html("Timer: " + timer);
-		$("#score").html("Score: " + score);
-		if (score > highScore) {
-			highScore = score;
-			$("#record").html("Record: " + highScore);
-		}
-	}
-
-	function endGame() {
-		clearDifficulty();
-		$(".btn-default:first-child").addClass("active");
-	}
-
-	function clearDifficulty() {
-		// console.log($('.btn-default'));
-		if($('.btn-default').hasClass('active')){
-			$('.btn-default').removeClass('active');
-			// console.log($(this));
-		} 
-	}	
-
-	$(".btn-default:first-child").addClass("active");
 	
-	$(".btn-default").click(function() {
-		clearDifficulty();
-		$(this).addClass('active');
-	});
-	
-	$('#start').click(function() {
-	    startGame();
-	    selectLevel();
-	});
+	$('.pause').click(function() {
+		var $this = $(this);
+	    $('header').css('background', 'url(/1.4.5._Twitter_Bootstrap/background2.jpg) no-repeat center center');
+	    $('header').css('background-size', 'cover');
+	    $('header').css('-webkit-background-size', 'cover');
+	    $('header').css('-moz-background-size', 'cover');
+		$('header').css('-o-background-size', 'cover');
 
-
-	// $('#pause').click(function() {
-	//     pauseGame();
-	// });
-	
-	$(document).keyup(function(event){
-		user.push(event.keyCode);
-
-		if(user[user.length - 1] != konami[user.length - 1]) {
-			user = [];
+		if($this.hasClass('pause')) {
+			$this.removeClass('pause').addClass('play');
 		}
 
-		if(user.length == konami.length) {
-			alert("Nuke Mode unlocked");
-			$("img").attr("src","/img/explosion.png");
-			$("img").animate({
-				top: '-90px'
-			}, duration)
-		
-			setTimeout(function() {
-				$("img").animate({
-					top: '95px'
-				}, duration)
-			}, duration + 750)
-
+		if($this.hasClass('play')) {
+			$('.play').html('<i class="fa fa-fw fa-play"></i>');
 		}
 	});
 
+	$('.play').click(function() {
+		var $this = $(this);
+		console.log($this);
+		$('header').css('background', 'url(/1.4.5._Twitter_Bootstrap/background.gif) no-repeat center center');
+	    $('header').css('background-size', 'cover');
+	    $('header').css('-webkit-background-size', 'cover');
+	    $('header').css('-moz-background-size', 'cover');
+		$('header').css('-o-background-size', 'cover');
+		if($this.hasClass('play')) {
+			$this.removeClass('play').addClass('pause');
+		}
 
+		if($this.hasClass('pause')) {
+			$('.pause').html('<i class="fa fa-fw fa-pause"></i>');
+		}
+	});
 
+	// jQuery for page scrolling feature - requires jQuery Easing plugin
+	$(function() {
+	    $('.page-scroll a').bind('click', function(event) {
+	        var $anchor = $(this);
+	        $('html, body').stop().animate({
+	            scrollTop: $($anchor.attr('href')).offset().top
+	        }, 1500, 'easeInOutExpo');
+	        event.preventDefault();
+	    });
+	});
+
+	// Floating label headings for the contact form
+	$(function() {
+	    $("body").on("input propertychange", ".floating-label-form-group", function(e) {
+	        $(this).toggleClass("floating-label-form-group-with-value", !! $(e.target).val());
+	    }).on("focus", ".floating-label-form-group", function() {
+	        $(this).addClass("floating-label-form-group-with-focus");
+	    }).on("blur", ".floating-label-form-group", function() {
+	        $(this).removeClass("floating-label-form-group-with-focus");
+	    });
+	});
+
+	var words = ['Jerome Ricks', "Full-Stack Web Developer", "Hi", "Bye"],
+    	div = document.getElementById('name'),
+    	character_counter = 0,
+    	counter = 0;
+
+	function updateWords(){ 
+		if(character_counter < words[counter].length) {
+		  if(words[counter][character_counter] == ' ') {
+		    div.innerHTML = div.innerHTML+'&nbsp;';
+		  }
+		  else {
+		    if(character_counter == 0){
+		    	div.innerHTML = words[counter][character_counter];
+		    } else {
+		    	div.innerHTML = div.innerHTML+ words[counter][character_counter];
+		    }
+		  }
+		}
+
+		character_counter++;
+
+		if(character_counter == words[counter].length + 4){  
+		    if(counter == 0){
+		        div = document.getElementById('desc');
+		        character_counter = 0;
+		        counter ++;
+		    } 
+	    }
+	}
+
+	var nameInterval = setInterval(updateWords, 300);
+
+	// Highlight the top nav as scrolling occurs
+	$('body').scrollspy({
+	    target: '.navbar-fixed-top'
+	})
+
+	// Closes the Responsive Menu on Menu Item Click
+	$('.navbar-collapse ul li a').click(function() {
+	    $('.navbar-toggle:visible').click();
+	});
 });
