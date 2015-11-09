@@ -4,7 +4,7 @@ $(document).ready(function() {
 	
 	$('.pause').click(function() {
 		var $this = $(this);
-	    $('header').css('background', 'url(/1.4.5._Twitter_Bootstrap/background2.jpg) no-repeat center center');
+	    $('header').css('background', 'url(/img/background2.jpg) no-repeat center center');
 	    $('header').css('background-size', 'cover');
 	    $('header').css('-webkit-background-size', 'cover');
 	    $('header').css('-moz-background-size', 'cover');
@@ -22,7 +22,7 @@ $(document).ready(function() {
 	$('.play').click(function() {
 		var $this = $(this);
 		console.log($this);
-		$('header').css('background', 'url(/1.4.5._Twitter_Bootstrap/background.gif) no-repeat center center');
+		$('header').css('background', 'url(/img/background.gif) no-repeat center center');
 	    $('header').css('background-size', 'cover');
 	    $('header').css('-webkit-background-size', 'cover');
 	    $('header').css('-moz-background-size', 'cover');
