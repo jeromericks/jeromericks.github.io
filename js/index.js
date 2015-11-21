@@ -79,11 +79,19 @@ $(document).ready(function() {
 		}
 
 		character_counter++;
-		clearInterval(nameInterval);
+
+		if(character_counter == words[counter].length + 4){  
+		    if(counter == 0){
+		        character_counter = 0;
+		        counter ++;
+		    } else if(counter == 1) {
+      			character_counter = 0;
+      			clearInterval(nameInterval);    
+      		}
+	    }
 	}
 
 	var nameInterval = setInterval(updateWords, 500);
-
 
 	// Highlight the top nav as scrolling occurs
 	$('body').scrollspy({
