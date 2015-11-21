@@ -59,39 +59,30 @@ $(document).ready(function() {
 	});
 
 	//Typing effect for title
-	var words = ['Jerome Ricks'],
+	var word = 'Jerome Ricks',
     	div = document.getElementById('name'),
-    	character_counter = 0,
-    	counter = 0;
+    	character_counter = 0;
 
 	function updateWords(){ 
-		if(character_counter < words[counter].length) {
-		  if(words[counter][character_counter] == ' ') {
+		if(character_counter < word.length) {
+		  if(word[character_counter] == ' ') {
 		    div.innerHTML = div.innerHTML+'&nbsp;';
 		  }
 		  else {
 		    if(character_counter == 0){
-		    	div.innerHTML = words[counter][character_counter];
+		    	div.innerHTML = word[character_counter];
 		    } else {
-		    	div.innerHTML = div.innerHTML+ words[counter][character_counter];
+		    	div.innerHTML = div.innerHTML + word[character_counter];
 		    }
 		  }
 		}
 
 		character_counter++;
 
-		if(character_counter == words[counter].length + 4){  
-		    if(counter == 0){
-		        character_counter = 0;
-		        counter ++;
-		    } else if(counter == 1) {
-      			character_counter = 0;
-      			clearInterval(nameInterval);    
-      		}
-	    }
 	}
 
 	var nameInterval = setInterval(updateWords, 500);
+
 
 	// Highlight the top nav as scrolling occurs
 	$('body').scrollspy({
