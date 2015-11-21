@@ -79,7 +79,7 @@ $(document).ready(function() {
 		}
 
 		character_counter++;
-		
+		clearInterval(nameInterval);
 	}
 
 	var nameInterval = setInterval(updateWords, 500);
