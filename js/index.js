@@ -58,7 +58,8 @@ $(document).ready(function() {
 	    });
 	});
 
-	var words = ['Jerome Ricks', "Full-Stack Web Developer", " Download"],
+	//Typing effect for title
+	var words = ['Jerome Ricks'],
     	div = document.getElementById('name'),
     	character_counter = 0,
     	counter = 0;
@@ -78,22 +79,11 @@ $(document).ready(function() {
 		}
 
 		character_counter++;
-
-		if(character_counter == words[counter].length + 4){  
-		    if(counter == 0){
-		        div = document.getElementById('desc');
-		        character_counter = 0;
-		        counter ++;
-		    } else if(counter == 1) {
-        		div = document.getElementById('button');
-      			character_counter = 0;
-      			div.innerHTML = '<a class="btn btn-default btn-lg"><i class="fa fa-download"></i>' + words[counter + 1] + '</a>';
-      			clearInterval(nameInterval);    
-      		}
-	    }
+		
 	}
 
-	var nameInterval = setInterval(updateWords, 300);
+	var nameInterval = setInterval(updateWords, 500);
+
 
 	// Highlight the top nav as scrolling occurs
 	$('body').scrollspy({
