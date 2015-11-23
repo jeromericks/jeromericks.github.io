@@ -67,16 +67,15 @@ $(document).ready(function() {
 
 	function updateWords(){ 
 		if(character_counter < word.length) {
-		  if(word[character_counter] == ' ') {
-		    div.innerHTML = div.innerHTML+'&nbsp;';
-		  }
-		  else {
-		    if(character_counter == 0){
-		    	div.innerHTML = word[character_counter];
-		    } else {
-		    	div.innerHTML = div.innerHTML + word[character_counter];
-		    }
-		  }
+		  	if(word[character_counter] == ' ') {
+		    	div.innerHTML = div.innerHTML+'&nbsp;';
+		  	} else {
+		    	if(character_counter == 0){
+		    		div.innerHTML = word[character_counter];
+		    	} else {
+		    		div.innerHTML = div.innerHTML + word[character_counter];
+		    	}
+		  	}
 		}
 
 		character_counter++;
