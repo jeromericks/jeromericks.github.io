@@ -18,8 +18,8 @@ $(document).ready(function() {
 	var redSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound3.mp3');
 	var yellowSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound2.mp3');
 	var blueSound = new Audio('https://s3.amazonaws.com/freecodecamp/simonSound1.mp3');
-	var soundsArr = [greenSound, redSound, yellowSound, blueSound];
 	var wrongSound = new Audio('https://www.freesound.org/data/previews/142/142608_1840739-lq.mp3');
+	var soundsArr = [greenSound, redSound, yellowSound, blueSound];
 
 
 	function startItUp(sequence) {
@@ -60,7 +60,7 @@ $(document).ready(function() {
 				(function(order) {
 					// Second setTimeout is for delay between computer moves.
 					setTimeout(function() {
-						soundIdx = colorArr.indexOf(simon[order]);
+						var soundIdx = colorArr.indexOf(simon[order]);
 						soundsArr[soundIdx].play();
 						$('.' + simon[order]).addClass(simon[order] + '-glow');
 						// Third setTimeout is for delay between removing glow effect.
