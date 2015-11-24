@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no">
+		<title>Simple Simon</title>
+		<link rel="shortcut icon" href="/img/colors.png">
+		<link href='https://fonts.googleapis.com/css?family=Squada+One' rel='stylesheet' type='text/css'>
+	    <link href='https://fonts.googleapis.com/css?family=VT323' rel='stylesheet' type='text/css'>
+		<link rel="stylesheet" href="/css/simplesimon.css">
+	</head>
+	<body>
+		<div class="game-container animated rollIn">
+	    	<button class="gameboard green" id="green" disabled></button>
+	      	<button class="gameboard red" id="red" disabled></button>
+	      	<button class="gameboard yellow" id="yellow" disabled></button>
+	      	<button class="gameboard blue" id="blue" disabled></button>
+		   	<div class="info">
+		        <h1>Simon<span>&reg;</span></h1>
+		        <button class="power"></button>
+		        <div class="count"></div>
+		        <!-- Picture provided by Freepik: http://goo.gl/fYNjIX -->
+		        <img class="arrow animated infinite pulse" src="/img/arrow.png" alt="Arrow pointing to power">
+		    </div>
+	    </div>
+
+	    <!-- jQuery -->
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	    <!-- Custom JavaScript -->
+	    <script type="text/javascript" src="js/simplesimon.js"></script>
+	</body>
+</html>
