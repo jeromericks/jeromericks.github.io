@@ -91,11 +91,6 @@ function score() {
 	} else {
 		$('.count').html(count);
 	}
-
-	if(count > record){
-		record = count;
-			$(".record").html("Record: " + record);
-	}
 }
 
 $(document).ready(function() {
