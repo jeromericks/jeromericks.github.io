@@ -93,7 +93,7 @@ function score() {
 	}
 
 	if(count > record){
-		record = sequence.length;
+		record = count;
 			$(".record").html("Record: " + record);
 	}
 }
