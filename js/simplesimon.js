@@ -6,6 +6,7 @@ var randomColor = 0;
 var playerGuess = '';
 var idx = 0;
 var count = 0;
+var record = 0;
 var gamePower = true;
 
 var startSequence = ['green', 'red', 'blue', 'green', 'yellow', 'red', 'blue', 'green', 'yellow', 'red', 'green', 'red', 'green', 'yellow', 'blue', 'red', 'green', 'blue', 'red', 'yellow', 'green', 'red', 'blue', 'yellow'];
