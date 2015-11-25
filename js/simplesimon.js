@@ -90,6 +90,11 @@ function score() {
 	} else {
 		$('.count').html(count);
 	}
+
+	if(count > record){
+		record = sequence.length;
+			$(".record").html("Record: " + record);
+	}
 }
 
 $(document).ready(function() {
