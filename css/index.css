@@ -223,9 +223,6 @@ header .list-inline {
 /*---Buttons---*/
 button {
 	margin: 0 4px 0px 1px;
-	/*-moz-box-shadow: 3px 3px 0px .1px black;
-    -webkit-box-shadow: 3px 3px 0px .1px black;
-    box-shadow: 3px 3px 0px .1px black;*/
 }
 
 .btn-outline {
